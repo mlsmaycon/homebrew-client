@@ -3,29 +3,30 @@
 
 # Netbird's UI Client Cask Formula
 cask "netbird-ui" do
-  version "0.5.10"
+  version "0.5.11"
 
   if Hardware::CPU.intel?
-      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.10/netbird-ui_0.5.10_darwin_amd64_signed.zip"
-      sha256 "e3dc29dd120b0cb5a2b05dab25f0b7e28cac0b96a22a578e1c3c2511c497e548"
+      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.11/netbird-ui_0.5.11_darwin_amd64_signed.zip"
+      sha256 "527c1259dca218704cdfa940681cb72cb67099fab05d371c27aa760e82d55838"
       app "netbird_ui_darwin_amd64", target: "Netbird UI.app"
   else
-      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.10/netbird-ui_0.5.10_darwin_arm64_signed.zip"
-      sha256 "ebc319255069c30dfd89b7d2fde10ddfabc34d9c488d2366744c00f7f0963b1c"
+      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.11/netbird-ui_0.5.11_darwin_arm64_signed.zip"
+      sha256 "44f8bb8b942dca03a646b57270df65bf61180f77dc8b1906aa0b2d0aff034065"
       app "netbird_ui_darwin_arm64", target: "Netbird UI.app"
   end
 
-  depends_on formula: "netbird"
+  postflight do
+    set_permissions "/Applications/netclient", '0755'
+  end
 
   installer script: {
-    executable: "installer.sh",
+    executable: "#{staged_path}/netbird_ui_darwin_amd64/installer.sh",
     sudo: true,
     must_succeed: false,
   }
 
   uninstall script: {
-    executable: "uninstaller.sh",
-    args: ["service","stop"],
+    executable: "#{staged_path}/netbird_ui_darwin_amd64/uninstaller.sh",
   }
 
   name "Netbird UI"
