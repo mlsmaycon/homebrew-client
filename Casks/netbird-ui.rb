@@ -3,15 +3,15 @@
 
 # Netbird's UI Client Cask Formula
 cask "netbird-ui" do
-  version "0.5.12"
+  version "0.5.13"
 
   if Hardware::CPU.intel?
-      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.12/netbird-ui_0.5.12_darwin_amd64_signed.zip"
-      sha256 "31187d7562c1e259c6f41afe5fcf9bb585bcfae1e688e51ef61617e72d833e60"
+      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.13/netbird-ui_0.5.13_darwin_amd64_signed.zip"
+      sha256 "cab38a7089cf894ef7c1116569400c597c55c49855fc3c4af459d747fe1d3fb1"
       app "netbird_ui_darwin_amd64", target: "Netbird UI.app"
   else
-      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.12/netbird-ui_0.5.12_darwin_arm64_signed.zip"
-      sha256 "5b92861adbcb6d571c4e43f9b82db1ec022e57afab04dca6702d36c65e98ec52"
+      url "https://github.com/mlsmaycon/netbird/releases/download/v0.5.13/netbird-ui_0.5.13_darwin_arm64_signed.zip"
+      sha256 "99ecdee0f0d939e69c087f66904888539c02d919f48005d0dec77604cd54ed15"
       app "netbird_ui_darwin_arm64", target: "Netbird UI.app"
   end
 
@@ -24,6 +24,7 @@ cask "netbird-ui" do
 
   postflight do
     system_command "#{appdir}/Netbird UI.app/installer.sh",
+                   args: ["#{version}"],
                    sudo: true
   end
 
