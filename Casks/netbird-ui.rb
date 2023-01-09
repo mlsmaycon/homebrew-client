@@ -3,15 +3,15 @@
 
 # Netbird's UI Client Cask Formula
 cask "netbird-ui" do
-  version "0.11.14"
+  version "0.11.15"
 
   if Hardware::CPU.intel?
-      url "https://github.com/mlsmaycon/homebrew-client/releases/download/v0.11.14/netbird-ui_0.11.14_darwin_amd64_signed.zip"
-      sha256 "cba42b9f6778bd93c06f282ef663e2e6fed9a035f32e49833adaeca00ea51010"
+      url "https://github.com/mlsmaycon/homebrew-client/releases/download/v0.11.15/netbird-ui_0.11.15_darwin_amd64_signed.zip"
+      sha256 "cda1d2c6a20383fa2f9aa5fd230a3d240c266ebfb3904c99b7c265ec76c568fb"
       app "netbird_ui_darwin_amd64", target: "Netbird UI.app"
   else
-      url "https://github.com/mlsmaycon/homebrew-client/releases/download/v0.11.14/netbird-ui_0.11.14_darwin_arm64_signed.zip"
-      sha256 "06a81da26b6b49db5295cb303033f92d0dd22e633fd66799288b25af3929078f"
+      url "https://github.com/mlsmaycon/homebrew-client/releases/download/v0.11.15/netbird-ui_0.11.15_darwin_arm64_signed.zip"
+      sha256 "fcf7a5aa26f449ca17cb14d5404e0e2928fe642911030de165a938a8e6fbccfe"
       app "netbird_ui_darwin_arm64", target: "Netbird UI.app"
   end
 
