@@ -7,11 +7,11 @@ cask "netbird-ui" do
 
   if Hardware::CPU.intel?
       url "https://github.com/mlsmaycon/homebrew-client/releases/download/v0.11.6/netbird-ui_0.11.6_darwin_amd64_signed.zip"
-      sha256 "ad41695906075594716dee2ef62a6f49407361a6cac2cd77ac6b70e85b15fcf3"
+      sha256 "d8ba026a645d49bd8ad8dde80601ec370224cc03b86407b01d4cdb8957afe486"
       app "netbird_ui_darwin_amd64", target: "Netbird UI.app"
   else
       url "https://github.com/mlsmaycon/homebrew-client/releases/download/v0.11.6/netbird-ui_0.11.6_darwin_arm64_signed.zip"
-      sha256 "c5621157686621ecb71f64c182686da62b8ace22aed4c2c5af932093e5e8213b"
+      sha256 "f591e22ba8dc0044cbca40e4af21c30a6fba6e939794fc17b79e8886fee90da9"
       app "netbird_ui_darwin_arm64", target: "Netbird UI.app"
   end
 
